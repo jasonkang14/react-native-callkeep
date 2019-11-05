@@ -147,9 +147,10 @@ RCT_REMAP_METHOD(checkSpeaker,
 // Display the incoming call to the user
 RCT_EXPORT_METHOD(displayIncomingCall:(NSString *)uuidString
                                handle:(NSString *)handle
+                  localizedCallerName:(NSString * _Nullable)localizedCallerName
                            handleType:(NSString *)handleType
-                             hasVideo:(BOOL)hasVideo
-                  localizedCallerName:(NSString * _Nullable)localizedCallerName)
+                             hasVideo:(BOOL)hasVideo)
+                  
 {
     [RNCallKeep reportNewIncomingCall: uuidString handle:handle handleType:handleType hasVideo:hasVideo localizedCallerName:localizedCallerName fromPushKit: NO];
 }
